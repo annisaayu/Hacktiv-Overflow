@@ -19,9 +19,9 @@
           </div>
           <div class="question-footer">
             <ul class="list-inline">
-              <li class="list-inline-item"><strong>Vote:</strong> 2</li>
-              <li class="list-inline-item"><strong>Comments:</strong> 0</li>
-              <li class="list-inline-item"><strong>Creator:</strong> Dian</li>
+              <li class="list-inline-item"><strong>Author:</strong> Dian</li>
+              <li class="list-inline-item"><i class="fas fa-thumbs-up"></i> 2</li>
+              <li class="list-inline-item"><i class="fas fa-thumbs-down"></i> 2</li>
             </ul>
           </div>
         </div>
@@ -33,6 +33,7 @@
 
 <script>
 // @ is an alias to /src
+import axios from 'axios'
 import SideBar from '@/components/SideBar.vue'
 import Navigation from '@/components/Navigation.vue'
 
@@ -41,6 +42,30 @@ export default {
   components: {
     SideBar,
     Navigation
+  },
+  created () {
+    if ( !localStorage.hasOwnProperty('token') ) {
+      window.location.replace('/')
+    } else {
+      this.getQuestion()
+      this.getAnswer()
+    }
+  },
+  methods: {
+    getQuestion () {
+      axios.get('http://localhost:3000/questions/', {
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
+        .then((response) => {
+          console.log(response);
+          
+        })
+        .catch((err) => {
+          console.log('ini err', err)
+        })
+    }
   }
 }
 </script>

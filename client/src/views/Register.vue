@@ -15,6 +15,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Register</button>
         </form>
+        <p>have an account ? <router-link to="/">Login</router-link></p>
       </div>
     </div>
   </div>
