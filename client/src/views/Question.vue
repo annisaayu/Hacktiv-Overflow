@@ -13,7 +13,7 @@
           </div>
           <div class="question-content">
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
               <a>show detail...</a>
             </p>
           </div>
@@ -59,8 +59,8 @@ export default {
         }
       })
         .then((response) => {
-          console.log(response);
-          
+          console.log(response.data.questions);
+
         })
         .catch((err) => {
           console.log('ini err', err)

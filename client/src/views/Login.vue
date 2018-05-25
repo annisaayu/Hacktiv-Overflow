@@ -14,7 +14,6 @@
             <input type="password" v-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-primary" @click="login">Login</button>
-          <a @click="login">TEST</a>
         </form>
         <p>don't have an account ? <router-link to="/Register">create one here</router-link></p>
       </div>
@@ -37,7 +36,7 @@ export default {
     }
   },
   methods: {
-    login () {      
+    login () {
       axios({
         method: 'post',
         url: 'http://localhost:3000/login',
@@ -55,7 +54,7 @@ export default {
       .catch( err => {
         alert('email dan password salah')
         console.log('ini errornya', err);
-        
+
       })
 
     }
