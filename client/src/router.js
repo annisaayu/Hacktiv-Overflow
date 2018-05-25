@@ -15,11 +15,6 @@ export default new Router({
       component: Login
     },
     {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
       path: '/register',
       name: 'Register',
       component: Register
@@ -31,7 +26,7 @@ export default new Router({
     },
     {
       path: '/questions/:id',
-      name: 'QuestionDetail',
+      name: 'Detail',
       component: QuestionDetail
     }
   ]
